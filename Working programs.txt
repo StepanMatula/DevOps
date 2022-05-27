@@ -1,0 +1,16 @@
+Working programm 
+
+Linux - VMWare, Virtualbox Remote connection - MobaXterm
+Terraform, YAML, Bash - Atom  
+MySQL - MySQL Workbench
+PostgreSQL - pgAdmin
+Python - PyCharm
+API - Postman
+Backup Laptop’a - Acorns True Image
+
+Online Tools
+
+jsonlint.com - syntaxes JSON
+yamllint.com - syntaxes YAML
+hcl2json.com - converter (JSON-YAML and other) regex101.com - regular expressions
+regex101.com - regular expressions
