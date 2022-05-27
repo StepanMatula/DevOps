@@ -9,7 +9,7 @@ API - Postman
 Backup Laptop’a - Acorns True Image
 
 Online Tools
-
+calculator.net/ip-subnet-calculator.html
 jsonlint.com - syntaxes JSON
 yamllint.com - syntaxes YAML
 hcl2json.com - converter (JSON-YAML and other) regex101.com - regular expressions
