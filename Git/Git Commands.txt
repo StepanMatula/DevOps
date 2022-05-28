@@ -1,1 +1,27 @@
-123
+sudo apt-get install git (Ubuntu)
+sudo yum install git (Linux)
+git --version
+git config --global user.name "Stepan Matula"
+git config --global user.email "rgb.matula@gmail.com"
+git init . #add git directory (.git)
+git status
+git add <file> (git add file123.txt>)
+git add * (git add all files)
+git commit -m "Commit version 0.1" (-m =message")
+
+#GIT STAGES
+Echo "HelloGit" > file.txt >>> git add file.txt >>> git commit -m "Version 0.1" >>> git push
+Untracked > Staged > Copy in Local Repository > Copy in GitHub
+
+git log (view all commit)
+git log -1 (last commits 2- last 2 commits)
+git log -1 -p (print details)
+git restore newfile1.txt --staged (deleting commit)
+
+git branch test
+git checkout test
+git checkout -b test
+git checkout master
+git merger test
+git branch -d test
+git branch -D test
