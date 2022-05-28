@@ -16,7 +16,11 @@ Untracked > Staged > Copy in Local Repository > Copy in GitHub
 git log (view all commit)
 git log -1 (last commits 2- last 2 commits)
 git log -1 -p (print details)
-git restore newfile1.txt --staged (deleting commit)
+git restore newfile1.txt --staged (deleting staging commit)
+nano .gitignore (inside i write what files must ignore)
+git remote add origin https://github.com/StepanMatula/DevOps.git (add git user on linux)
+git push --set-upstream origin master (login and push commit on GitHub)
+git clone (https://github.com/StepanMatula/DevOps.git or other)
 
 git branch test
 git checkout test
