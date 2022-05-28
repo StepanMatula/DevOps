@@ -39,3 +39,5 @@ git branch -D test (delete branch with Commit)
 git reset --hard HEAD~2 (return 2 version commits back)
 git reset --soft HEAD~3 
 git clone --- (clone git repository)
+git push --set-upstream origin stepan_task001 (push on new branch stepan_tak001)
+
