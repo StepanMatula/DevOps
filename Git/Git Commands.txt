@@ -19,13 +19,19 @@ git log -1 -p (print details)
 git restore newfile1.txt --staged (deleting staging commit)
 nano .gitignore (inside i write what files must ignore)
 git remote add origin https://github.com/StepanMatula/DevOps.git (add git user on linux)
+git push origin
 git push --set-upstream origin master (login and push commit on GitHub)
 git clone (https://github.com/StepanMatula/DevOps.git or other)
 
-git branch test
-git checkout test
-git checkout -b test
-git checkout master
-git merger test
-git branch -d test
-git branch -D test
+#SSH Connect
+ssh-keygen
+git remote -v (view HTTP or SSH Connection on Git)
+git remote set-url origin git@github.com:StepanMatula/DevOps.git (changes on SSH connectrion)
+
+git init myapp (create directory "myapp")
+git branch ( view branches)
+git checkout (change branche)
+git checkout -b test (create branch and switch to him)
+git merger test (put together 2 branches)
+git branch -d test (delete empty branch)
+git branch -D test (delete branch with Commit)
