@@ -35,3 +35,7 @@ git checkout -b test (create branch and switch to him)
 git merger test (put together 2 branches)
 git branch -d test (delete empty branch)
 git branch -D test (delete branch with Commit)
+
+git reset --hard HEAD~2 (return 2 version commits back)
+git reset --soft HEAD~3 
+git clone --- (clone git repository)
