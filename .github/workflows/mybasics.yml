@@ -2,7 +2,7 @@
 
 name: CI
 env:
-  APPLICATION_NAME.  : " MyFlasK "
+  APPLICATION_NAME   : "MyFlasK"
   DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{ github.sha }}"
 
 
@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "Hello 1"
           echo "Hello 2"
-          echo "Application name: ${{ env.APPLICATION_NAME. }}"
+          echo "Application name is ${{ env.APPLICATION_NAME }}"
 
   my_deploy:
 
