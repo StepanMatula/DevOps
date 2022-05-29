@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "Hello 1"
           echo "Hello 2"
-          echo "Application name: ${{ env.APPLICATION_NAME }}"
+          echo "Application name: ${{ env.APPLICATION_NAME. }}"
 
   my_deploy:
 
