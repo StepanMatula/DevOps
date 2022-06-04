@@ -1,10 +1,11 @@
-123123
-222
-wwqqw
+from hero import *
 
-    whileqw
-12123
+myhero = Hero("Vurdalak", 4, "Orc")
+mysuperhero = SuperHero("Moisey", 10, "Human", 5)
 
-123123
-123
-123123
+myhero.show_hero()
+
+mysuperhero.makemagic()
+mysuperhero.makemagic()
+mysuperhero.makemagic()  # -30 to make magic
+mysuperhero.show_hero()
