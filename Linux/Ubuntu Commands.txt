@@ -22,6 +22,8 @@ mkdir – создать директорию
 rmdir – стереть пустую директорию
 cp     - копировать директорию
 mv  - переименовать или перенести директорию
+scp - copy file from local to remote # scp test.txt userbravo@destination:/location2 
+scp file <remote_username>@<IPorHost>:<PathToFile>   <LocalFileLocation> #copy from remote to local
 
 rm –R   – стереть не пустую директорию со всем что внутри
 
