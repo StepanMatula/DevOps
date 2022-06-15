@@ -1,1 +1,4 @@
-123
+sudo pip3 install ansible
+ansible-inventory --list #list of ansible inventory
+ansible-inventory --graph
+ansible --version 
