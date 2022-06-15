@@ -2,3 +2,13 @@ sudo pip3 install ansible
 ansible-inventory --list #list of ansible inventory
 ansible-inventory --graph
 ansible --version 
+ansible all -m setup #ansible for ALL servers -m (module) - setup (list of setups on servers)
+ansible all -m shell -a "uptime" #-a - argument "uptime" for all servers
+ansible all -m copy -a "src=privet.txt dest=/home/ec2-user mode=777" ### copy from ansible master server (source privet.txt. destination home/ec2-user, with mode 777"
+ansible all -m copy -a "src=privet.txt dest=/home/ec2-user mode=777" ### copy from ansible master server (source privet.txt. destination home/ec2-user, with mode 777" -b ( -b is SUDO if destination directory is /home)
+ansible all -m file -a "path=/home/ec2-user/privet.txt state=absent" ### remove file from all servers (state=absent is deleting)
+ansible all -m get_url -a "url=###link dest=/home/ec2-user" -b ### Download any file/app to all servers from internet
+ansible all -m uri -a "url=https://www.adv-it.net return_content=yes" # read pages from internet
+ansible all -m yum -a "name=httpd state=latest" -b ### intastall apache on all servers
+ansible all -m service -a "name=httpd state=started enabled=yes" -b ### start web server when instance in starting
+ansible-playbook playbook.yml #### run playbooks
