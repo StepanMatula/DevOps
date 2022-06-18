@@ -12,3 +12,4 @@ ansible all -m uri -a "url=https://www.adv-it.net return_content=yes" # read pag
 ansible all -m yum -a "name=httpd state=latest" -b ### intastall apache on all servers
 ansible all -m service -a "name=httpd state=started enabled=yes" -b ### start web server when instance in starting
 ansible-playbook playbook.yml #### run playbooks
+ansible-galaxy init *name* ### create roles 
