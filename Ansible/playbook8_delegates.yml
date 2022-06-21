@@ -1,0 +1,47 @@
+---
+
+- name: Playbook with Includes/Imports
+  hosts: all
+  become: yes
+
+  vars:
+   mytext: "Pryvit vid Stepana Matuly"
+
+  tasks:
+  - name: Ping Test
+    ping:
+
+  - name: Unregister Server from Load Balancer
+    shell: echo This server {{ inventory_hostname }} was deregistered from our Load Balancer, node name is {{ ansible_nodename }} >> /home/log.txt
+    delegate_to: 127.0.0.1
+
+  - name: Create file1
+    copy:
+      dest: /home/file1.txt
+      content: |
+         This is FileN1
+         On ENGLISH Hello
+         On UKRAINIAN {{ mytext }}
+    delegate_to: server2
+
+  - name: Create file2
+    copy:
+      dest: /home/file2.txt
+      content: |
+          This is FileN2
+          ON ENGLISH Hello World
+          ON UKRAINIAN {{ mytext }}
+
+  - name: Reboot my servers
+    shell: reboot now
+    async: 1
+    poll: 0
+    delegate_to: server2
+
+  - name: Wait till my server will come up online
+    wait_for:
+       host: "{{ inventory_hostname }}"
+       state: started
+       delay: 5
+       timeout: 60
+    delegate_to: 127.0.0.1
