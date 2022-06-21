@@ -1,0 +1,18 @@
+---
+
+- name: Playbook with Includes/Imports
+  hosts: all
+  become: yes
+
+  vars:
+   mytext: "Privet vid Stepana Matuly"
+
+  tasks:
+  - name: Ping Test
+    ping:
+
+  - name: Create Folderssss
+    include: create_folders.yml
+
+  - name: Create Filessssss
+    include: create_files.yml mytext="Hello from Lviv"
