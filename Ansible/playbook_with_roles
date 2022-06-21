@@ -1,0 +1,8 @@
+---
+- name: Install Apache And Upload my Web Page
+  hosts: all
+### or PROD / STAGING ### or all ### or --extra-vars "{{ MYHOSTS }}"
+  become: yes
+
+  roles:
+   - { role:  deploy_apache_web, when: ansible_system =='Linux' }
