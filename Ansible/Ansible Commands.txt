@@ -13,3 +13,4 @@ ansible all -m yum -a "name=httpd state=latest" -b ### intastall apache on all s
 ansible all -m service -a "name=httpd state=started enabled=yes" -b ### start web server when instance in starting
 ansible-playbook playbook.yml #### run playbooks
 ansible-galaxy init *name* ### create roles 
+ansible-playbook playbook_jinja.yml --extra-var "MYHOSTS=PROD" ### {{ MYHOSTS }} write in playbook hosts 
