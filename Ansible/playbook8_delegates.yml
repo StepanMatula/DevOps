@@ -45,3 +45,7 @@
        delay: 5
        timeout: 60
     delegate_to: 127.0.0.1
+
+# - name: Update my databse
+#   shell: #####
+#   run_once: true ###  zapustiti odun raz
