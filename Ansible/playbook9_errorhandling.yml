@@ -1,0 +1,23 @@
+---
+- name: Ansible Lesson 19
+  hosts: all
+  any_errors_fatal: true
+# any error stop playbook
+  become: yes
+
+  tasks:
+  - name: Task Number1
+    yum: name=treeeee state=latest
+    ignore_errors: yes
+
+  - name: Task Number2
+    shell: cat /home/ec2-user/myfile.txt
+    register: results
+    failed_when: results.rc == 0
+##    failed_when: "'World' in results.stdout"
+
+  - debug:
+      var: results
+
+  - name: Task Number3
+    shell: echo Pryvit Svit!
