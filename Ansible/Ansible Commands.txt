@@ -24,6 +24,7 @@ ansible-vault decrypt **** ### rozshifrovat file
 ansible-playbook playbook_vault.yml --ask-vault-pass ### run vaulted playbook, with ask a password
 ansible-playbook **** --vault-password-file ***.txt ### run vaulted playbook, without ask a password. Pass in ***.txt
 ansible-vault encrypt_string ### encrypt your sting, this string i can input instead password
+ansible-doc -l | grep ec2
 
 #### DYNAMIC HOSTS INVENTORY
 pip3 install boto3
