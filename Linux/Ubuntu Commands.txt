@@ -199,3 +199,8 @@ sudo ifup   eth0      - включить сетевуху eth0
 crontab - l    - показать расписание
 crontab -e   - редактировать расписание
 /etc/crontab  - файл расписания на системном уровне
+
+sudo yum install httpd
+sudo apachectl start
+sudo apachectl stop
+apachectl status
