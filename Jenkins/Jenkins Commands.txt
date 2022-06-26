@@ -2,6 +2,7 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+/vat/lib/jenkins/plugins ### All installed plugins
 
 add-job-to-view	Adds jobs to view.
 build	Builds a job, and optionally waits until its completion.
