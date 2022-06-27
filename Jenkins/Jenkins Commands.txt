@@ -73,3 +73,9 @@ version	Outputs the current version.
 wait-node-offline	Wait for a node to become offline.
 wait-node-online	Wait for a node to become online.
 who-am-i	Reports your credential and permissions.
+
+#### Jenkins CLI
+java -jar jenkins-cli.jar -auth user_cli:1111 -s http://localhost:8080 who-am-i 
+export JENKIN_USER_ID=******
+export JENKINS_API_TOKEN=***** 
+## auth from token
