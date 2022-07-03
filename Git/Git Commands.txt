@@ -25,6 +25,7 @@ git clone (https://github.com/StepanMatula/DevOps.git or other)
 
 #SSH Connect
 ssh-keygen
+exec ssh-agent bash
 git remote -v (view HTTP or SSH Connection on Git)
 git remote set-url origin git@github.com:StepanMatula/DevOps.git (changes on SSH connectrion)
 
