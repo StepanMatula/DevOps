@@ -4,3 +4,4 @@ terraform need to move /usr/local/bin (SHIFT+COMMANG+G to find directory)
 terraform init ( when in terraform drectory)
 terraform plan (see what terraform must do)
 terraform apply (apply terraform plan (create instance))
+terraform destroy
