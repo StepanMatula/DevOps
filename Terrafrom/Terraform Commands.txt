@@ -10,4 +10,5 @@ terraform init ( when in terraform drectory)
 terraform plan (see what terraform must do)
 terraform apply (apply terraform plan (create instance))
 terraform destroy
+terraform show ### shows what we can print in #terraform output
 terraform output
