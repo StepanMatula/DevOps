@@ -12,3 +12,4 @@ terraform apply (apply terraform plan (create instance))
 terraform destroy
 terraform show ### shows what we can print in #terraform output
 terraform output
+terraform console ### тестує окремий код в консолі
