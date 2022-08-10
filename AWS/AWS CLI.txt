@@ -1,0 +1,5 @@
+aws s3 ls
+aws s3 mb s3://mynewbucket
+aws s3 mb s3://mynewbucketinwestusa  --region=us-west-1
+aws s3 cp  c:\hlam  s3://destinationbucketname
+aws s3 sync s3://mynewbucket  c:\MyFolder
