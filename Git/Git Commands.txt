@@ -30,12 +30,15 @@ exec ssh-agent bash
 git remote -v (view HTTP or SSH Connection on Git)
 git remote set-url origin git@github.com:StepanMatula/DevOps.git (changes on SSH connectrion)
 
+
 git init myapp (create directory "myapp")
 git branch ( view branches)
 git checkout (change branche)
 git checkout -b test (create branch and switch to him)
 git checkou ^1 (перейти на 1 коміт назад)
 git merger test (put together 2 branches)
+git rebase -i HEAD~3
+git rebase
 git branch -d test (delete empty branch)
 git branch -D test (delete branch with Commit)
 
