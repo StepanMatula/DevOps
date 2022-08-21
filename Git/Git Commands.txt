@@ -40,6 +40,7 @@ git checkou ^1 (перейти на 1 коміт назад)
 git merger test (put together 2 branches)
 git rebase -i HEAD~3
 git rebase
+git rebase --edit-todo
 git branch -d test (delete empty branch)
 git branch -D test (delete branch with Commit)
 
