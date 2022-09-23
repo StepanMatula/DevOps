@@ -8,3 +8,6 @@ sudo mv kafka***** /usr/local/kafka
 cd ~/kafka
 
 #### to find JAVA_HOME do: java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' it should be like this: java.home = /usr/lib/jvm/java-8-openjdk-amd64
+
+###HOW TO READ AND WRITE TOPICS:
+https://kafka.apache.org/quickstart
