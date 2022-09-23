@@ -4,6 +4,7 @@ sudo apt install default-jre
 sudo apt-get install wget
 wget https://archive.apache.org/dist/kafka/3.2.1/kafka_2.13-3.2.1.tgz
 tar -xzf kafka_2.13-3.2.1.tgz
-mv kafka***** /usr/local/kafka
+sudo mv kafka***** /usr/local/kafka
 cd ~/kafka
 
+#### to find JAVA_HOME do: java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' it should be like this: java.home = /usr/lib/jvm/java-8-openjdk-amd64
