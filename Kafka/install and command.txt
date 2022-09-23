@@ -1,0 +1,9 @@
+install ubuntu: https://stackoverflow.com/questions/67705738/problem-with-kafka-failed-with-result-exit-code-status-1-failure
+
+sudo apt install default-jre
+sudo apt-get install wget
+wget https://archive.apache.org/dist/kafka/3.2.1/kafka_2.13-3.2.1.tgz
+tar -xzf kafka_2.13-3.2.1.tgz
+mv kafka***** /usr/local/kafka
+cd ~/kafka
+
