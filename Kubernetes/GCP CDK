@@ -1,0 +1,12 @@
+gcloud version
+gcloud init ### налаштувати gcloud з моїм Google Cloud
+gcloud services enable container.googleapis.com ### включити створення кубера в gcp
+
+gcloud container clusters create stepan ### створити і запустити кластер з дефолтними параметрами
+gcloud container clusters create stepan --num-nodes=4 ### створити і запустити кластер з заданими параметрами
+gcloud container clusters get-credentials stepan ### налаштувати kubectl з роботою нашого кластера
+gcloud container clusters delete stepan ### видалити кластер
+
+kubectl version --clien
+kubectl cluster-info
+kubectl get nodes
