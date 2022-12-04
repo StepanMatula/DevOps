@@ -205,7 +205,7 @@ sudo apachectl start
 sudo apachectl stop
 apachectl status
 
-
+https://highload.today/systemd-linux/
 У systemd есть несколько основных команд, которые быстро запоминаются при постоянном использовании менеджера.
 systemctl start name.service — запустить сервис.
 systemctl stop name.service — остановить сервис.
