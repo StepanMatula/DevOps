@@ -204,3 +204,18 @@ sudo yum install httpd
 sudo apachectl start
 sudo apachectl stop
 apachectl status
+
+
+У systemd есть несколько основных команд, которые быстро запоминаются при постоянном использовании менеджера.
+systemctl start name.service — запустить сервис.
+systemctl stop name.service — остановить сервис.
+systemctl restart name.service — перезапустить сервис.
+systemctl status name.service — узнать статус сервиса.
+systemctl enable name.service — добавить сервис в автозагрузку.
+systemctl disable name.service — удалить сервис из автозагрузки.
+systemctl is-enabled name.service — проверить, находится ли сервис в списке автозагрузки.
+systemctl mask name.service — запретить запуск сервиса.
+systemctl umask name.service — разрешить запуск сервиса.
+systemctl --state=failed — показать службы, которые не запустились.
+systemctl help name.service — показать страницу руководства сервиса.
+systemctl daemon-reload — применить конфигурацию после изменения в описании сервиса.
