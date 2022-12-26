@@ -71,7 +71,7 @@ docker rmi  # delete image
 UPDATE IMAGE
 ~~~~~~~~~~~~~
 docker run -d -p 7777:80 denis_ubuntu4
-docker exec -it 5267e21d140 /bin/bash
+docker exec -it 5267e21d140 /bin/bash ### виконати дію в контейнері ( не перебуваючи в ньому) тут він запускає баш шел
 echo "V2" >> /var/www/html/index.html
 exit
 docker commit 5267e21d140 denis_v2:latest
