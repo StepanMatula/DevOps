@@ -5,8 +5,8 @@ docker images	Список локальных Images
 	
 docker search tomcat	Найти Image tomcat в DockerHub
 docker pull tomcat	Скачать Image tomcat из DockerHub
-docker run -it -p 7777:8080 tomcat	Запустить интерактивно контейнер  tomcat на порте 7777
-docker run -d -p 8888:8080 tomcat	Запустить НЕинтерактивно контейнер  tomcat на порте 8888
+docker run -it -p 7777:8080 tomcat /bin/bash 	Запустить интерактивно контейнер  tomcat на порте 7777 (Інтерактивно це означає з оболочкою баш)
+docker run -d -p 8888:8080 tomcat	Запустить НЕинтерактивно контейнер  tomcat на порте 8888 (-d означає процес в бекграунді)
 docker run -d -p 80:80 nginx	Запустить НЕинтерактивно контейнер  nginx на порте 80
 	
 docker tag oldname:v1  newname:v2	Создать копию Image с другим именем и тагом
@@ -47,7 +47,7 @@ docker images
 docker attach #number of container - залізти назад в контайнер який раниться
 docker search tomcat 
 docker pull tomcat #### Download only 
-docker run -it -p 1234:8080 tomcat
+docker run -it -p 1234:8080 tomcat /bin/bash ( (Інтерактивно це означає з оболочкою баш)
 docker run -it -p 8888:80 nginx
 docker run -d -p 8888:80 nginx
 
