@@ -17,6 +17,10 @@ kubectl proxy	Creates a proxy server between a localhost and the Kubernetes API 
 kubectl run	Creates and runs a particular image in a pod.
 kubectl version	Prints the client and server version information.
 
+
+
+kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 ### команда / імя / імейдж=повна ссилка на імейжд/таґ
+
 kubectl autoscale deployment	Autoscales a Kubernetes Deployment.
 kubectl create configmap	Creates a ConfigMap resource.
 kubectl get deployments -o wide	Lists deployments with details.
