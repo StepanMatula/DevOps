@@ -6,7 +6,7 @@ kubectl config get-clusters	Displays clusters defined in the kubeconfig.
 kubectl config get-contexts	Displays the current context.
 kubectl create	Creates a resource.
 kubectl delete	Deletes resources.
-kubectl describe	Shows details of a resource or group of resources.
+kubectl describe (наприклад pods)	Shows details of a resource or group of resources.
 kubectl expose	Exposes a resource to the internet as a Kubernetes service.
 kubectl get	Displays resources.
 kubectl get pods	Lists all the Pods.
