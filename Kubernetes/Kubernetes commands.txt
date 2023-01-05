@@ -1,5 +1,6 @@
 Command	Description
 for …do	Runs a for command multiple times as specified.
+kubectl cluster-info
 kubectl apply	Applies a configuration to a resource.
 kubectl config get-clusters	Displays clusters defined in the kubeconfig.
 kubectl config get-contexts	Displays the current context.
