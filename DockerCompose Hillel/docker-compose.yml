@@ -6,10 +6,14 @@ services:
    - db_data:/var/lib/mysql
   restart: always
   environment:
-   MYSQL_ROOT_PASSWORD: somewordpress
+   MYSQL_ROOT_PASSWORD: /run/secrets/wp_root
    MYSQL_DATABASE: wordpress
-   MYSQL_USER: wordpress
-   MYSQL_PASSWORD: wordpress
+   MYSQL_USER: /run/secrets/wp_login
+   MYSQL_PASSWORD: /run/secrets/wp_pass
+  secrets:
+     - wp_login
+     - wp_pass
+     - wp_root 
  wordpress:
   depends_on:
    - db
@@ -29,6 +33,8 @@ secrets:
   wp_login:
      external: true
   wp_pass:
+     external: true
+  wp_root:
      external: true
 
 volumes:
