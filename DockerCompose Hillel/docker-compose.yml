@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 services:
  db:
   image: arm64v8/mysql:8
@@ -19,15 +19,17 @@ services:
   restart: always
   environment:
    WORDPRESS_DB_HOST: db:3306
-   WORDPRESS_DB_USER: wordpress
-   WORDPRESS_DB_PASSWORD_FILE: /run/secret/wp_password.txt
+   WORDPRESS_DB_USER: /run/secrets/wp_login
+   WORDPRESS_DB_PASSWORD: /run/secrets/wp_pass
    WORDPRESS_DB_NAME: wordpress
   secrets:
-    - source: my_secret
-      target: wordpress
-   
+     - wp_login
+     - wp_pass
 secrets:
-   my_secret:
-     file: ./wp_password.txt
+  wp_login:
+     external: true
+  wp_pass:
+     external: true
+
 volumes:
  db_data: {}

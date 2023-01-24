@@ -1,0 +1,44 @@
+Docker swarm init
+
+printf "my super secret password" | docker secret create wp_pass -
+vgnh8gmsjck6q9hz6l2ept7v0 - - створюємо секрет пасс
+
+printf "my super secret login" | docker secret create wp_login -
+vcixvwb1e9l07sc4vhnawvtl5 - створюємо секрет логін
+
+docker secret inspect wp_pass дивимось чи все ок з секретом
+
+docker service create --name wp_login_pass --secret wp_login --secret  wp_pass wordpress:latest
+pnmbpfrt8nwz5mvkjpghvmhir - звязуємо сервіс пароля і сервіс логіна з контейнером
+
+docker container exec 1cac75ed3157 ls -l /run/secrets - перевіряємо чи в контейнері є секрет
+total 4
+-r--r--r-- 1 root root 21 Jan 24 12:20 wp_login
+-r--r--r-- 1 root root 24 Jan 24 12:20 wp_pass
+
+docker stack deploy -c docker-compose.yml wordpress - деплоїм вордпрес
+
+Creating service wordpress_wordpress
+Creating service wordpress_db
+
+Міняємо у докерфайлі 
+ wordpress:
+  depends_on:
+   - db
+  image: arm64v8/wordpress:6
+  ports:
+   - "8000:80"
+  restart: always
+  environment:
+   WORDPRESS_DB_HOST: db:3306
+   WORDPRESS_DB_USER: /run/secrets/wp_login прописуєм шлях до секрету
+   WORDPRESS_DB_PASSWORD: /run/secrets/wp_pass  прописуєм шлях до секрету
+   WORDPRESS_DB_NAME: wordpress
+  secrets: прописуємо секрети
+   - wp_login
+   - wp_pass
+secrets: прописуємо загальні секрети
+  wp_login:
+     external: true (зовнішній секрет)
+  wp_pass:
+     external: true (зовнішній секрет)
