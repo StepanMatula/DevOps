@@ -6,14 +6,14 @@ services:
    - db_data:/var/lib/mysql
   restart: always
   environment:
-   MYSQL_ROOT_PASSWORD: "/run/secrets/wp_root"
+   MYSQL_ROOT_PASSWORD_FILE: "/run/secrets/wp_root"
    MYSQL_DATABASE: wordpress
-   MYSQL_USER: "/run/secrets/wp_login"
-   MYSQL_PASSWORD: "/run/secrets/wp_pass"
+   MYSQL_USER_FILE: "/run/secrets/wp_login"
+   MYSQL_PASSWORD_FILE: "/run/secrets/wp_pass"
   secrets:
-     - wp_login
-     - wp_pass
-     - wp_root 
+     - source: wp_login
+     - source: wp_pass
+     - source: wp_root 
  wordpress:
   depends_on:
    - db
@@ -23,12 +23,12 @@ services:
   restart: always
   environment:
    WORDPRESS_DB_HOST: db:3306
-   WORDPRESS_DB_USER: "/run/secrets/wp_login"
-   WORDPRESS_DB_PASSWORD: "/run/secrets/wp_pass"
+   WORDPRESS_DB_USER_FILE: "/run/secrets/wp_login"
+   WORDPRESS_DB_PASSWORD_FILE: "/run/secrets/wp_pass"
    WORDPRESS_DB_NAME: wordpress
   secrets:
-     - wp_login
-     - wp_pass
+     - source: wp_login
+     - source: wp_pass
 secrets:
   wp_login:
      external: true
