@@ -11,9 +11,9 @@ services:
    MYSQL_USER_FILE: "/run/secrets/wp_login"
    MYSQL_PASSWORD_FILE: "/run/secrets/wp_pass"
   secrets:
-     - source: wp_login
-     - source: wp_pass
-     - source: wp_root 
+     - wp_login
+     - wp_pass
+     - wp_root 
  wordpress:
   depends_on:
    - db
@@ -27,8 +27,8 @@ services:
    WORDPRESS_DB_PASSWORD_FILE: "/run/secrets/wp_pass"
    WORDPRESS_DB_NAME: wordpress
   secrets:
-     - source: wp_login
-     - source: wp_pass
+     - wp_login
+     - wp_pass
 secrets:
   wp_login:
      external: true
