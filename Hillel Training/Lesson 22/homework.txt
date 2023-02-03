@@ -1,0 +1,135 @@
+[cloudshell-user@ip-10-6-14-248 ~]$ aws ec2 create-vpc     --cidr-block 10.0.0.0/16 
+{
+    "Vpc": {
+        "CidrBlock": "10.0.0.0/16",
+        "DhcpOptionsId": "dopt-0df0ef9391500e1a4",
+        "State": "pending",
+        "VpcId": "vpc-0fb8025e5bbbd1060",
+        "OwnerId": "288217402880",
+        "InstanceTenancy": "default",
+        "Ipv6CidrBlockAssociationSet": [],
+        "CidrBlockAssociationSet": [
+            {
+                "AssociationId": "vpc-cidr-assoc-070faa8940b325181",
+                "CidrBlock": "10.0.0.0/16",
+                "CidrBlockState": {
+                    "State": "associated"
+                }
+            }
+        ],
+        "IsDefault": false
+
+aws ec2 create-tags --resources vpc-0fb8025e5bbbd1060 --tags Key=Name,Value=MyVPC123
+
+aws ec2 create-subnet --vpc-id vpc-0fb8025e5bbbd1060 --cidr-block 10.0.0.0/24
+{
+    "Subnet": {
+        "AvailabilityZone": "us-west-2d",
+        "AvailabilityZoneId": "usw2-az4",
+        "AvailableIpAddressCount": 251,
+        "CidrBlock": "10.0.0.0/24",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false,
+        "State": "available",
+        "SubnetId": "subnet-02a13e8cf8590ba08",
+        "VpcId": "vpc-0fb8025e5bbbd1060",
+        "OwnerId": "288217402880",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "SubnetArn": "arn:aws:ec2:us-west-2:288217402880:subnet/subnet-02a13e8cf8590ba08",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+        }
+    }
+}
+
+aws ec2 create-tags --resources subnet-02a13e8cf8590ba08 --tags Key=Name,Value=public
+
+aws ec2 create-subnet --vpc-id vpc-0fb8025e5bbbd1060 --cidr-block 10.0.1.0/24
+{
+    "Subnet": {
+        "AvailabilityZone": "us-west-2d",
+        "AvailabilityZoneId": "usw2-az4",
+        "AvailableIpAddressCount": 251,
+        "CidrBlock": "10.0.1.0/24",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false,
+        "State": "available",
+        "SubnetId": "subnet-0a421ecd4e6706752",
+        "VpcId": "vpc-0fb8025e5bbbd1060",
+        "OwnerId": "288217402880",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "SubnetArn": "arn:aws:ec2:us-west-2:288217402880:subnet/subnet-0a421ecd4e6706752",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+        }
+    }
+}
+
+aws ec2 create-tags --resources subnet-0a421ecd4e6706752 --tags Key=Name,Value=private
+
+aws ec2 create-internet-gateway
+{
+    "InternetGateway": {
+        "Attachments": [],
+        "InternetGatewayId": "igw-02a9f01d396ca2312",
+        "OwnerId": "288217402880",
+        "Tags": []
+    }
+}
+
+aws ec2 attach-internet-gateway --vpc-id vpc-0fb8025e5bbbd1060 --internet-gateway-id igw-02a9f01d396ca2312 
+
+aws ec2 create-route-table --vpc-id vpc-0fb8025e5bbbd1060
+{
+    "RouteTable": {
+        "Associations": [],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-0219d24adc58a63ff",
+        "Routes": [
+            {
+                "DestinationCidrBlock": "10.0.0.0/16",
+                "GatewayId": "local",
+                "Origin": "CreateRouteTable",
+                "State": "active"
+            }
+        ],
+        "Tags": [],
+        "VpcId": "vpc-0fb8025e5bbbd1060",
+        "OwnerId": "288217402880"
+    }
+}
+
+
+aws ec2 create-route --route-table-id rtb-0219d24adc58a63ff --destination-cidr-block 0.0.0.0/0 --gateway-id igw-02a9f01d396ca2312
+{
+    "Return": true
+}
+
+
+aws ec2 associate-route-table  --subnet-id subnet-02a13e8cf8590ba08 --route-table-id rtb-0219d24adc58a63ff
+{
+    "AssociationId": "rtbassoc-02f28b97ad9d999da",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+
+aws ec2 modify-subnet-attribute --subnet-id subnet-02a13e8cf8590ba08 --map-public-ip-on-launch     
+
+aws ec2 associate-route-table  --subnet-id subnet-0a421ecd4e6706752 --route-table-id rtb-0219d24adc58a63ff
+{
+    "AssociationId": "rtbassoc-0365ff2d6ff743317",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
