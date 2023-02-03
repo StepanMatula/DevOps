@@ -1,0 +1,1 @@
+aws ec2 describe-images     --owners amazon --region us-west-2    --query 'reverse(sort_by(Images,&CreationDate))[:5].{id:ImageId,date:CreationDate}' --filters "Name=architecture,Values=x86_64"
