@@ -1,0 +1,3 @@
+aws ec2 describe-subnets --filters "Name=tag:Name,Values=private" | grep CidrBlock
+            "CidrBlock": "10.0.1.0/24",
+            "Ipv6CidrBlockAssociationSet": [],
